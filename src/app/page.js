@@ -1,14 +1,10 @@
-"use client"
-import { useState } from "react";
 
+import Area from "./area"
 
 export default function Home() {
-  const [num,setNum] = useState(0);
   return (
    <>
-   <button onClick={()=>{setNum(num+1)}}>
-    {num}
-   </button>
+   <Area />
    </>
   );
 }
