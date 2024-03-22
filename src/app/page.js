@@ -1,11 +1,10 @@
-import ProductData from './product/page'
+import ProductData from './Products/page'
 
 export default function Home() {
 
   return (
     <>
-      <h1>Data List</h1>
-      <ProductData />
+     <h1>Welcome!!</h1>
     </>
   );
 }
