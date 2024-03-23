@@ -33,3 +33,22 @@ export const DELETE = async (req) => {
         return NextResponse.json({ message: 'Error' }, { status: 500 });
     }
 }
+
+
+export const PUT = async (req) => {
+    try {
+        const url = req.url;
+        const id = url.split('user/')[1];
+        console.log(id);
+        const username = await req.json();
+        const user = users.filter((x)=>x.id.toString() === id);
+        if(userIndex === -1){
+            return NextResponse.json('Data not found');   
+        }
+        user.username = username;
+        return NextResponse.json('Ok');
+    } catch (err) {
+        console.error(err);
+        return NextResponse.json({ message: 'Error' }, { status: 500 });
+    }
+}
